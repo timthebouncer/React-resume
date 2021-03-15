@@ -1,9 +1,9 @@
-.wrap{
+.home-wrap{
   flex: 1;
   width: 70%;
   margin: 0 auto;
 
-  .brief{
+  .home-brief{
     text-align: center;
     img{
       width: 110px;
@@ -32,14 +32,17 @@
     }
   }
 
-  .works{
+  .home-works{
     text-align: center;
     padding-top: 40px;
     padding-bottom: 25px;
 
-    .title{
+    .home-title{
       h3{
+        font-size: 30px;
         padding-bottom: 12px;
+        color: rgba(0,0,0,.8);
+        font-weight: 400;
       }
     }
   }

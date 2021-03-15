@@ -1,11 +1,25 @@
 import './App.scss';
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link, Route, withRouter} from 'react-router-dom'
 import HomePage from './HomePage/HomePage'
 import WorksPage from './WorksPage/WorksPage'
 import WorksDetail from './WorksDetail/WorksDetail'
 
 function App(props) {
+
+  // let [state, setState] = useState([])
+
+  // useEffect( function() {
+  //
+  //   (async() =>{
+  //     const url = "https://api.randomuser.me/";
+  //     const response = await fetch(url);
+  //     const data = await response.json();
+  //     setState({person: data.results[0]})
+  //   })()
+  // },[])
+  //
+  // console.log(state.person,1)
 
   const {location} = props;
 
