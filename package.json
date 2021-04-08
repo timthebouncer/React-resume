@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/timthebouncer/React-resume.git",
+  "author": "timthebouncer <71633334+timthebouncer@users.noreply.github.com>",
+  "license": "MIT"
 }

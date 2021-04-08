@@ -5,9 +5,7 @@ import styles from './detail.module.scss'
 // export default class Fetch extends React.Component
 export default () =>{
 
-  let [state, setState] = useState([])
-  let [locationState, setLocation] = useState([])
-
+  let [{state, state2}, setState] = useState({people: {}, location: []})
 
   useEffect( function() {
 
@@ -15,12 +13,14 @@ export default () =>{
      const url = "https://api.randomuser.me/";
      const response = await fetch(url);
      const data = await response.json();
-     setState({person: data.results[0]})
-     setLocation({location:data.results})
+     setState(() => ({
+       state: data.results[0],
+       state2: data.results
+     }))
     })()
   },[])
   console.log(state)
-  console.log(locationState,666)
+  console.log(state2)
 
   // async componentDidMount(){
   //   const url = "https://api.randomuser.me/";
@@ -37,21 +37,21 @@ export default () =>{
         <h3>StarKiller</h3>
         <p>2021/03/15</p>
         {
-          !state.person ? <div>Loading</div>:
+          !state ? <div>Loading</div>:
             <div className={styles.basicInfo}>
               <div className={styles.userDetail}>
-                <div><img src={state.person.picture.large} /></div>
+                <div><img src={state.picture.large} /></div>
                 <div className={styles.name}>
-                  <p>{state.person.name.title}</p>
-                  <p>{state.person.name.first}</p>
-                  <p>{state.person.name.last}</p>
-                  <p>{state.person.email}</p>
+                  <p>{state.name.title}</p>
+                  <p>{state.name.first}</p>
+                  <p>{state.name.last}</p>
+                  <p>{state.email}</p>
                 </div>
               </div>
               <div className={styles.userHome}>
                 {
-                  locationState.length !== 0 ?
-                  locationState.location.map(item =>
+                  state2.length !== 0 ?
+                      state2.map(item =>
                     <ul key={item.id}>
                       <li>City: {item.location.city}</li>
                       <li>Country: {item.location.country}</li>
